@@ -1,0 +1,22 @@
+Testing Guide:
+
+1)	Test Cases should be in Below Format:
+    a.	test_<type Of Test>_<Module Name>_<Function_Name>_<Serial Number>.
+2)	Using C & Unity as the main Framework.
+3)	Setting Up Unity:
+    a.	Download unity.h, unity.c & unity_internals.h and set up in external dependenies. 
+    b.	(Link: https://github.com/ThrowTheSwitch/unity)
+    c.	In main function always define SetUp and TearDown 
+        i.	SetUp -> Code to run before testing 
+        ii.	TearDown -> Code to run after testing
+    d.	Create a file all_tests.h which will contain the single function containing all the functions inside the single test file.
+    e.	Include all_tests.h inside the main.c file
+    f.	In main.c include below code 
+        int main(void) {
+            UNITY_BEGIN();
+            
+            run_odd_tests();       // Runs all 10 odd tests
+            
+            return UNITY_END();
+        }
+4)  For Reference, refer the github repo TestingGuide.
